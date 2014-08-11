@@ -8,6 +8,13 @@ This standalone-application comes with the following features
 * Legal Information
 * Login-System(read below)
 
+# Install
+Run:
+* bundle install
+* be rake db:migrate
+* be rails s
+You're done :)
+
 
 # Login System
 Change the login-combination within application_controller.rb
