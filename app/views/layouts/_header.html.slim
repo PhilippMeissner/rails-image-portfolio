@@ -1,0 +1,22 @@
+nav.navbar.navbar-fixed-top.navbar-inverse role="navigation"
+  .container
+    /! Brand and toggle get grouped for better mobile display
+    .navbar-header
+    button.navbar-toggle data-target="#bs-example-collapse-1" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    = link_to "Portfolio", root_path, class: "navbar-brand"
+    .collapse.navbar-collapse#bs-example-collapse-1
+      ul.nav.navbar-nav
+        li = link_to "Gallery", projects_path
+        li = link_to "Contact", contact_path
+        li = link_to "Legal Information", legal_path
+      - if is_admin?
+         ul.nav.navbar-nav.navbar-right
+          - if params[:action] == 'show'
+            li = link_to "Delete current Project", project_path(@project), method: :delete, data: { confirm: "Do you REALLY want to delete this project and all its images? This action CAN NOT be undone!"}
+            li = link_to "Edit current Project", edit_project_path(@project)
+          li = link_to "Create New Project", new_project_path
+          p.navbar-text.navbar-right You're signed in.

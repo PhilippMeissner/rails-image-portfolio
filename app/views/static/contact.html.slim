@@ -1,0 +1,8 @@
+.container
+  h1.page-header Contact
+  = simple_form_for :contact_data, url: message_validation_path do |f|
+    = f.input :name
+    = f.input :email
+    = f.input :subject
+    = f.input :message, as: :text
+    = f.button :submit, "Send Message" 

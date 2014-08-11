@@ -1,0 +1,41 @@
+style="body{padding-top:50px};"
+header.carousel.slide#myCarousel
+  - if @images.blank?
+    ol.carousel-indicators
+      li.active data-slide-to="0" data-target="#myCarousel"
+    .carousel-inner
+      .item.active
+        .fill style="background-image:url('#{@project.featured_image_url.to_s}')"
+    a.left.carousel-control href="#myCarousel" data-slide="prev"
+      span.icon-prev
+    a.right.carousel-control href="#myCarousel" data-slide="next"
+      span.icon-next
+  - else
+    ol.carousel-indicators
+      - @images.each_with_index do |i, index|
+        - if index == 0
+          li.active data-target="#myCarousel" data-slide-to="#{index}"
+        - else
+          li data-target="#myCarousel" data-slide-to="#{index}"
+    .carousel-inner
+      - @images.each_with_index do |img, index|
+        - if index == 0
+          .item.active
+            .fill style="background-image:url('#{img.image_url.to_s}')"
+        -else
+          .item
+            .fill style="background-image:url('#{img.image_url.to_s}')"
+    a.left.carousel-control href="#myCarousel" data-slide="prev"
+      span.icon-prev
+    a.right.carousel-control href="#myCarousel" data-slide="next"
+      span.icon-next
+
+.container
+  h2 = @project.name
+  p = @project.description
+
+
+javascript:
+  $('.carousel').carousel({
+    interval: 500
+  })

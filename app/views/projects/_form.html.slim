@@ -1,0 +1,39 @@
+h1 Project Data
+= simple_nested_form_for(@project) do |f|
+  .row
+    .col-md-12
+     = f.input :name
+     = f.input :description
+
+  - if @project.featured_image.blank?
+    .row
+      .col-md-12
+        .well
+          = f.input :featured_image, label: "New featured Image"
+  - else
+    .row
+      .col-md-9
+        .well
+          = f.input :featured_image, label: "New featured Image"
+      .col-md-3
+        .well
+          h4 Current featured image
+          = image_tag(@project.featured_image_url(:thumb).to_s, alt: "Not found")
+
+  hr
+  h2 Image Data
+  = f.simple_fields_for :images do |i|
+    .row
+      .col-md-9
+        .well
+          = i.input :image, label: "Edit Image"
+          = i.link_to_remove "Undo", class: "btn btn-warning"
+
+      - if i.object.persisted?
+        .col-md-3
+          .well
+            h4 Current image ##{i.index + 1}
+            = image_tag(i.object.image_url(:thumb).to_s)
+  = f.link_to_add "Add another Image", :images, class: "btn btn-primary"
+  hr
+  = f.button :submit
