@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20140807081356) do
 
   create_table "images", force: true do |t|
+    t.text     "description"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
