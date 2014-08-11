@@ -13,6 +13,7 @@ Run:
 * bundle install
 * be rake db:migrate
 * be rails s
+
 You're done :)
 
 
