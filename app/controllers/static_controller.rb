@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-  skip_before_filter :restrict_access, only: %i[legal contact]
+  skip_before_filter :restrict_access, only: %i[legal contact validate_message]
 
   # CHANGE THIS TO YOUR NEEDS
   MAIL_TO = "myemail@example.com"
