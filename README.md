@@ -8,6 +8,9 @@ This standalone-application comes with the following features
 * Legal Information
 * Login-System(read below)
 
+# DEMO
+http://www.carinawente.de - Portfolio by Carina Wente
+
 # Install
 Run:
 * bundle install
@@ -31,3 +34,12 @@ Remember to restart the server when you set the mail and config-mailer up.
 
 # Bootswatch-theme
 To change the theme just delete the content of bootstrap_overrides.css.sass file and fill it with your desired .css code (convert it to sass before)
+
+# Support
+If you have a concern feel free to drop me a message or report any bugs you come across. This is most likely far from being perfect ;)
+
+# Licenses
+This has been developed by me, Philipp Meißner and ZEIT.IO (www.zeit.io). You are free to use the provided code for whatever you need. You are also more than welcome to contribute to this project if you feel like.
+Backlinking to my github-page would be awesome and highly appreciated, isn't a must-do though.
+
+# Thank you!
