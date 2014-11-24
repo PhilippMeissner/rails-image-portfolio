@@ -41,3 +41,6 @@ footer {
 .project-image:hover{
   opacity: 0.65;
 }
+.carousel-control {
+  background-image: none !important;
+}

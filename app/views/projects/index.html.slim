@@ -1,16 +1,20 @@
 .container
-  h1.page-header = ("Gallery").upcase
+  .row
+    .col-xs-12
+      h1 Portfolio by YourNameGoesHere
+      h1.page-header = ("Gallery").upcase
 .container
   -if @projects.empty?
-    h2 Sorry, there are no projects yet.
+    .col-xs-12.row
+      h2 Sorry, there are no projects yet.
   - else
     - @projects.each do |p|
       .row
-        .col-md-7
+        .col-sm-7
           = link_to project_path(p)
             = image_tag(p.featured_image_url(:gallery).to_s, alt: "Invalid Link", class: "project-image")
-        .col-md-5
-          h3 = p.name.upcase
+        .col-sm-5
+          h3.page-header = p.name.upcase
           p = p.description
           = link_to "View Project", project_path(p), class: "btn btn-default"
       hr

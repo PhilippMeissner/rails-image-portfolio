@@ -31,8 +31,10 @@ header.carousel.slide#myCarousel
       span.icon-next
 
 .container
-  h2 = @project.name
-  p = @project.description
+  .row
+    .col-sm-12
+      h2.page-header = @project.name
+      p = @project.description
 
 
 javascript:
